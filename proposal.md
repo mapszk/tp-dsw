@@ -2,7 +2,10 @@
 
 ## Grupo
 ### Integrantes
-* legajo - Apellido(s), Nombre(s)
+* 50672 Martin Pilaszek
+* 50336 Lazaro Cerquetti
+* 51732 Thiago Pipero
+* 48784 Bruno Cussitt
 
 ### Repositorios
 * [frontend app](http://hyperlinkToGihubOrGitlab)
@@ -11,7 +14,7 @@
 
 ## Tema
 ### Descripción
-*2 a 6 líneas describiendo el negocio (menos es más)*
+Aplicacion para gestion de reservas en un estacionamiento. Comprende la alta de usuarios, gestion de playas de estacionamientos, reservas, tarifas, y clientes.
 
 ### Modelo
 ![imagen del modelo]()
