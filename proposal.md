@@ -14,42 +14,34 @@
 
 ## Tema
 ### Descripción
-Aplicacion para gestion de reservas en un estacionamiento. Comprende la alta de usuarios, gestion de playas de estacionamientos, reservas, tarifas, y clientes.
+Aplicacion para gestion de reservas en un estacionamiento. Comprende la alta de usuarios, gestion de playas de estacionamientos, reservas, tarifas, clientes y pagos.
 
 ### Modelo
 ![imagen del modelo]()
-
-*Nota*: incluir un link con la imagen de un modelo, puede ser modelo de dominio, diagrama de clases, DER. Si lo prefieren pueden utilizar diagramas con [Mermaid](https://mermaid.js.org) en lugar de imágenes.
 
 ## Alcance Funcional 
 
 ### Alcance Mínimo
 
-*Nota*: el siguiente es un ejemplo para un grupo de 3 integrantes para un sistema de hotel. El 
-
-Regularidad:
 |Req|Detalle|
 |:-|:-|
-|CRUD simple|1. CRUD Tipo Habitacion<br>2. CRUD Servicio<br>3. CRUD Localidad|
-|CRUD dependiente|1. CRUD Habitación {depende de} CRUD Tipo Habitacion<br>2. CRUD Cliente {depende de} CRUD Localidad|
-|Listado<br>+<br>detalle| 1. Listado de habitaciones filtrado por tipo de habitación, muestra nro y tipo de habitación => detalle CRUD Habitacion<br> 2. Listado de reservas filtrado por rango de fecha, muestra nro de habitación, fecha inicio y fin estadía, estado y nombre del cliente => detalle muestra datos completos de la reserva y del cliente|
-|CUU/Epic|1. Reservar una habitación para la estadía<br>2. Realizar el check-in de una reserva|
+| CRUD Simple | 1. CRUD Usuario<br/>2. CRUD Cliente<br/>3. CRUD TipoVehiculo<br/>4. CRUD TipoEstadia<br/>5. CRUD Playa |
+| CRUD Dependiente | 1. CRUD Cochera depende de Playa<br/>2. CRUD Pago depende de Reserva<br/>3. CRUD Tarifa depende de TipoVehiculo y TipoEstadia<br/>4. CRUD Reserva depende de Cliente, Cochera, TipoVehiculo y TipoEstadia |
+| Listado + detalle | 1. Listado de cochera por playa<br/>2. Listado de reservas<br/>3. Listado de clientes |
+| CUU/Epic | 1. Crear una reserva: valida disponibilidad de cochera, calcula precio según tarifa y asocia cliente existente o nuevo<br/>2. Finalizar una reserva: libera cochera y registra el pago<br/>3. Cancelar una reserva |
 
 
 Adicionales para Aprobación
-|Req|Detalle|
+| Req | Detalle |
 |:-|:-|
-|CRUD |1. CRUD Tipo Habitacion<br>2. CRUD Servicio<br>3. CRUD Localidad<br>4. CRUD Provincia<br>5. CRUD Habitación<br>6. CRUD Empleado<br>7. CRUD Cliente|
-|CUU/Epic|1. Reservar una habitación para la estadía<br>2. Realizar el check-in de una reserva<br>3. Realizar el check-out y facturación de estadía y servicios|
+| Funcionalidad adicional | 1. Registrar pago de una reserva<br>2. Validar solapamiento de reservas por cochera<br>3. Gestión de estado de reserva (pendiente, activa, finalizada, cancelada) |
 
 
 ### Alcance Adicional Voluntario
 
-*Nota*: El Alcance Adicional Voluntario es opcional, pero ayuda a que la funcionalidad del sistema esté completa y será considerado en la nota en función de su complejidad y esfuerzo.
-
-|Req|Detalle|
+| Req | Detalle |
 |:-|:-|
-|Listados |1. Estadía del día filtrado por fecha muestra, cliente, habitaciones y estado <br>2. Reservas filtradas por cliente muestra datos del cliente y de cada reserve fechas, estado cantidad de habitaciones y huespedes|
-|CUU/Epic|1. Consumir servicios<br>2. Cancelación de reserva|
-|Otros|1. Envío de recordatorio de reserva por email|
+| Listados | 1. Listado de cocheras disponibles por fecha<br>2. Reporte de ingresos por día<br>3. Filtro de reservas por estado<br>4. Historial de reservas por cliente |
+| CUU / Epic | 1. Modificación de una reserva (reprogramación de fechas)<br>2. Reasignación de cochera |
+| Otros | 1. Exportación de reportes (CSV o PDF)<br>2. Notificación simple de reservas (opcional) |
 
