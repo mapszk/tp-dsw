@@ -31,7 +31,7 @@ Diferencias con el DER original, necesarias para la funcionalidad de la app:
 |:-|:-|
 | CRUD Simple | 1. CRUD Usuario<br/>2. CRUD TipoVehiculo<br/>3. CRUD TipoEstadia<br/>4. CRUD Playa |
 | CRUD Dependiente | 1. CRUD Cochera depende de Playa<br/>2. CRUD Tarifa depende de TipoVehiculo y TipoEstadia<br/>3. CRUD Reserva depende de Usuario, Cochera, TipoVehiculo y TipoEstadia<br/>4. CRUD Pago depende de Reserva |
-| Listado + detalle | 1. Listado de cocheras filtrado por playa => detalle muestra la cochera, su playa y sus reservas<br/>2. Listado de reservas filtrado por estado => detalle muestra la reserva, usuario, cochera y pago |
+| Listado + detalle | 1. Listado de cocheras filtrado por playa (y por estado y techo) => al seleccionar una cochera redirige a su CRUD: muestra su estado (disponible, ocupada o inhabilitada) y permite editar su playa, si es techada y su estado, o eliminarla<br/>2. Listado de reservas filtrado por estado => detalle muestra la reserva, usuario, cochera y pago |
 | CUU/Epic | 1. Crear una reserva: valida disponibilidad de cochera y solapamiento de fechas, calcula el precio según la tarifa vigente para el tipo de vehículo y tipo de estadía<br/>2. Registrar el pago de una reserva: a partir de una reserva creada (CUU 1) y aprobada por un administrador, registra el pago y la reserva pasa a pagada<br/>3. Reprogramar una reserva: a partir de una reserva creada (CUU 1), cambia las fechas, revalida disponibilidad (reasignando cochera si es necesario) y recalcula el precio |
 
 
